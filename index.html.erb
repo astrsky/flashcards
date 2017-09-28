@@ -1,0 +1,17 @@
+<h1>Все карточки</h1>
+<table>
+  <tr>
+    <th>Original Text</th>
+    <th>Translated Text</th>
+    <th>Review_date</th>
+  </tr>
+ 
+  <% @сards.each do |card| %>
+    <tr>
+      <td><%= card.original_text %></td>
+      <td><%= card.translated_text %></td>
+      <td><%= card.review_date %></td>
+      <td><%= link_to 'Show', card_path(card) %></td>
+    </tr>s
+  <% end %>
+</table>
