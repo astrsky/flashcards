@@ -1,0 +1,38 @@
+<h1> Editing Cards</h1>
+<%= form_with(model: @card, local: true) do |form| %>
+ 
+  <% if @card.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@card.errors.count, "error") %> prohibited
+        this card from being saved:
+      </h2>
+      <ul>
+        <% @card.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :Original_Text %><br>
+    <%= form.text_field :Original_Text %>
+  </p>
+ 
+  <p>
+    <%= form.label :Translated_Text %><br>
+    <%= form.text_area :Translated_Text %>
+  </p>
+
+  <p>
+  <%= form.label :Review_date %><br>
+    <%= form.text_area :Review_date %>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', cards_path %>

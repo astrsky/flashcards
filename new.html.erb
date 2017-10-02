@@ -1,0 +1,20 @@
+<%= form_with scope: :card, local: true do |form| %>
+  <p>
+    <%= form.label :Original_Text %><br>
+    <%= form.text_field :Original_Text %>
+  </p>
+ 
+  <p>
+    <%= form.label :Translated_Text %><br>
+    <%= form.text_area :Translated_Text %>
+  </p>
+
+  <p>
+    <%= form.label :Review_date %><br>
+    <%= form.text_area :Review_date %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
