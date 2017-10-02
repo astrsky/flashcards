@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Флэшкарточкер</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
+  </head>
+  <body>
+    <div class ="container">
+
+      <header class="clearfix">
+        <h1>Флэшкарточкер</h1>
+        <ul class="nav nav-pills">
+          <li class = "active"><a class = "btn-primary" <%= link_to 'Все Карточки', cards_path %></a></li>
+          <li class = "active"><a class = "btn-primary" <%= link_to 'Добавить карточку', new_card_path %></a></li>
+          </ul>
+      </header>
+
+     <section>
+      <p style="font-size: 22px;">
+        Первый в мире удобный менеджер флеш-карточек. Именно так.
+      </p>
+      </section>
+     </div>
+<%= yield %>
+  </body>
+  
+</html>
