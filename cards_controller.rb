@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   def index
-    @сards = Card.all
+    @cards = Card.all
   end
 
   def new
@@ -8,7 +8,7 @@ class CardsController < ApplicationController
   end
 
   def show
-    @сard = Card.find(params[:id])
+    @card = Card.find(params[:id])
   end
 
   def edit
@@ -16,13 +16,12 @@ class CardsController < ApplicationController
   end
 
   def create
-    @сard = Card.new(card_params)
-    @card.review_date = Date.today + 3
+    @card = Card.new(card_params)
 
     if @card.save
     redirect_to @card
    else
-    render :new
+    render 'new'
    end
   end
 
