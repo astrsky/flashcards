@@ -1,17 +1,12 @@
+
 <p>
-  <%= form.label :original_text %><br>
-  <%= form.text_field :original_text %>
+  <%= @card.original_text %><br>
 </p>
  
 <p>
-  <%= form.label :translated_text %><br>
-  <%= form.text_area :translated_text %>
+  <%= @card.translated_text %><br>
 </p>
 
 <p>
-  <%= form.label :review_date %><br>
-  <%= form.text_area :review_date %>
-
-<% end %>
- 
-<%= link_to 'Back', cards_path %>
+  <%= @card.review_date %><br>
+</p>
