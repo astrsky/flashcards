@@ -9,22 +9,11 @@ require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
 
-doc = Nokogiri::HTML(open("http://wordsteps.com/vocabulary/words/46729/")
-cards_list = doc.xpath()
+doc = Nokogiri::HTML(open("https://www.memrise.com/course/920/5000-german-words-top-87/"))
+row = doc.css('div.span9 .levels.clearfix a.level.clearfix[href*="/course/920/5000-german-words-top-87"]').each do |row|
+  original_text = row.css('div.central.column .things.clearfix .things.text-text .col_a.col.text').text
+  translated_text = row.css('div.central.column .things.clearfix .things.text-text .col_b.col.text').text
+  puts "#{original_text}\t#{translated_text}"
 
-
-=begin cards_list = [
-  ['a little bit', 'немного']
-  ['abandon', 'покидать, оставлять, отказываться']
-  ['abbreviation', 'сокращение']
-  ['aberration', 'отклонение']
-  ['abhor', 'ненавидеть, не выносить']
-  ['abide', 'оставаться верным, придерживаться']
- 
-]
-
-cards_list.each do |original_text, translated_text|
-  Cards.create( original_text: original_text, translated_text: translated_text)
+  Card.create(original_text: original_text, translated_text: translated_text)
 end 
-=end
-
