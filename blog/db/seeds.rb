@@ -10,10 +10,9 @@ require 'nokogiri'
 require 'open-uri'
 
 doc = Nokogiri::HTML(open("http://wordsteps.com/vocabulary/words/46729/"))
-cards_list = doc.css ('table#WordsTable tbody tr').each do |row|
-  original_text = row.css('td static word').text
-  translated_text = row.css('td static trans').text
-
+row = doc.css('#WordsTable tbody tr').each do |row|
+  original_text = row.css('td.static.word').text
+  translated_text = row.css('td.static.trans').text
 
   Card.create(original_text: original_text, translated_text: translated_text)
 end 
