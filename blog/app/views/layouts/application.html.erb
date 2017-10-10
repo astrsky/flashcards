@@ -5,32 +5,26 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-       
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
   </head>
-
   <body>
-    <%= yield %>
-  <div class ="container">
+    <div class ="container">
 
-    <header class="clearfix">
-      <h1>Флэшкарточкер</h1>
-      <ul class="navigation-links">
-        <li><a class = "btn-primary" href="#">Все карточки</a></li>
-        <li><a class = "btn-primary" href="#">Добавить карточку</a></li>
-      </ul>
-    </header>
+      <header class="clearfix">
+        <h1>Флэшкарточкер</h1>
+        <ul class="nav nav-pills">
+          <li class = "active"><%= link_to 'Все Карточки', cards_path %></li>
+          <li class = "active"><%= link_to 'Добавить карточку', new_card_path %></li>
+          </ul>
+      </header>
 
-    <section>
+     <section>
       <p style="font-size: 22px;">
         Первый в мире удобный менеджер флеш-карточек. Именно так.
       </p>
-    </section>
-
-  </div>
-
-
-
+      </section>
+     </div>
+<%= yield %>
   </body>
   
 </html>
