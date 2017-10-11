@@ -9,11 +9,12 @@ class CardsController < ApplicationController
     @card = Card.new
   end
 
+#before_action
   def show
   end
 
-  def edit
-    
+#before_action
+  def edit 
   end
 
   def create
@@ -26,6 +27,7 @@ class CardsController < ApplicationController
     end
   end
 
+#before_action
   def update
     if @card.update(card_params)
       redirect_to @card
@@ -33,7 +35,8 @@ class CardsController < ApplicationController
       render 'edit'
     end
   end
-
+  
+#before_action
   def destroy 
     @card.destroy
 

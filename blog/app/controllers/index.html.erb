@@ -1,0 +1,8 @@
+<p><%= @message %></p><br>
+
+<%= form_tag card_path(@card) do %>
+<%=@card.random_card :translated_text %><br> 
+<%= text_field_tag :translated_text %>
+<button>Проверить</button>
+<% end %>
+
